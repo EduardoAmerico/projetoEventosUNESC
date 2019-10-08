@@ -1,6 +1,7 @@
 export class Banner {
     id: string;
     titulo: string;
+    imagem: string;
     link: string;
 
     // constructor(values: any) {
