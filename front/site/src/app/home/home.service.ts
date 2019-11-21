@@ -9,8 +9,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomeService {
  
-  // private readonly API = `${environment.API}banner`;
-   private readonly API = "http://localhost:3000/banner";
+  private readonly API = `${environment.API}banner`;
+  //  private readonly API = "http://localhost:3000/banner";
 
 
   constructor(private http:HttpClient) { }

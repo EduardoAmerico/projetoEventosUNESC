@@ -33,48 +33,34 @@
 </div>
 
 <div class="row">
+    <div class="col-md-6">
+      <input
+        type="text"
+        id="myInput"
+        class="form-control"
+        placeholder="Pesquisar"
+      />
+    </div>
+    
+    <div class="col-auto">
+      <button class="btn  btn-success" (click)="onSearch()">Pesquisar</button>
+    </div>
+  </div>
 
-    <div class="col-md-4 col-12">
+<div class="row card-group">
+    <div *ngFor="let banner of banners" class="col-lg-4 col-12 m-p-5">
         <div class="card">
-            <a href="https://ifeventos.ifsertao-pe.edu.br/public/event/96">
-                <img class="card-img-top"
-                    src="http://www.unesc.net/portal/resources/posts/thumb_jornada_empreendedora_alteracao_selo.png?1553629724"
-                    alt="Imagem de capa do card">
+            <a href="{{banner.link}}">
+                <img class="card-img-top" src="{{banner.imagem}}" alt="{{banner.titulo}}">
             </a>
             <div class="card-body">
-                <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o
-                    conteúdo do card.</p>
+                <h4 class="card-title m-font-18">{{banner.titulo}}</h4>
+                <div class="card-subtitle mb-2 text-muted m-font-14">
+                <div *ngIf="banner.dataFinal; else elseBlock"> de {{banner.dataInicial | date: "dd/MM/yyyy"}} até {{banner.dataFinal | date: "dd/MM/yyyy"}}</div>
+                <ng-template #elseBlock> dia {{banner.dataInicial | date: "dd/MM/yyyy"}}</ng-template>
+            </div>
+                <p class="card-text m-font-14 m-card-overflow">{{banner.descricao}}</p>
             </div>
         </div>
     </div>
-
-    <div class="col-md-4 col-12">
-        <div class="card">
-            <a href="https://ifeventos.ifsertao-pe.edu.br/public/event/96">
-                <img class="card-img-top"
-                    src="http://www.unesc.net/portal/resources/posts/thumb_jornada_empreendedora_alteracao_selo.png?1553629724"
-                    alt="Imagem de capa do card">
-            </a>
-            <div class="card-body">
-                <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o
-                    conteúdo do card.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-4 col-12">
-        <div class="card">
-            <a href="https://ifeventos.ifsertao-pe.edu.br/public/event/96">
-                <img class="card-img-top"
-                    src="http://www.unesc.net/portal/resources/posts/thumb_jornada_empreendedora_alteracao_selo.png?1553629724"
-                    alt="Imagem de capa do card">
-            </a>
-            <div class="card-body">
-                <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o
-                    conteúdo do card.</p>
-            </div>
-        </div>
-    </div>
-
-
 </div>

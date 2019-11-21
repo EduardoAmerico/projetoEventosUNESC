@@ -48,4 +48,34 @@
     padding-top: 45px;
     padding-bottom: 45px;
 }
+/* .m-card-overflow {
+    white-space: nowrap; 
+    height: 55px;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+} */
+.m-p-5{
+    padding: 10px;
+}
+.m-font-18 {
+    font-size: 18px!important;
+}
+.m-font-14 {
+    font-size: 14px!important;
+}
+/* .container {
+    padding-right: 15px!important;
+    padding-left: 15px!important;
+    margin-right: auto!important;
+    margin-left: auto!important;
+} */
+.m-card-overflow{
+    display: -webkit-box;
+    height: 60px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 

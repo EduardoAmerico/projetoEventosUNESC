@@ -15,8 +15,17 @@ export class HomeComponent implements OnInit {
 
   constructor(private homeService:HomeService) { }
 
+  formatDate(dateStr){
+      const [day, month, year] = dateStr.split("-")
+      return new Date(year, month - 1, day)
+    
+  }
+  
+
   ngOnInit() {
     this.homeService.list().subscribe(dados => this.banners = dados);
+    console.log(this.formatDate("10-01-2019"))
+    console.log(this.formatDate("20-01-2019"))
   }
   startBanner(){
 
