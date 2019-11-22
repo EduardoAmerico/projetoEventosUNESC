@@ -27,8 +27,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     // this.homeService.list().subscribe(dados => this.banners = dados);
+    this.idCategoria=0;
     this.onSearch();
     this.startBanner();
+    
   }
 
   onSearch(){
