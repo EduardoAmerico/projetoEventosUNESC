@@ -32,20 +32,31 @@
     </div>
 </div>
 
-<div class="row">
-    <div class="col-md-6">
-      <input
-        type="text"
-        id="myInput"
-        class="form-control"
-        placeholder="Pesquisar"
-      />
+<div class="row ">
+    <div class="col-7">
+        <input type="text" id="myInput" class="form-control" placeholder="Pesquisar" />
     </div>
-    
-    <div class="col-auto">
-      <button class="btn  btn-success" (click)="onSearch()">Pesquisar</button>
+    <div class="col-2">
+        <select class="form-control" ngModel [(ngModel)]="idCategoria" >
+            <option value="0">Todos</option>
+
+            <option value="1">Técnologia</option>
+       
+            <option value="2">Cultura</option>
+         
+            <option value="3">Palestra</option>
+       
+            <option value="4">Esporte</option>
+        </select>
     </div>
-  </div>
+    <div class="col-3">
+        <button class="btn  btn-success" (click)="onSearch()">Pesquisar</button>
+    </div>
+
+
+
+</div>
+
 
 <div class="row card-group">
     <div *ngFor="let banner of banners" class="col-lg-4 col-12 m-p-5">
@@ -56,9 +67,10 @@
             <div class="card-body">
                 <h4 class="card-title m-font-18">{{banner.titulo}}</h4>
                 <div class="card-subtitle mb-2 text-muted m-font-14">
-                <div *ngIf="banner.dataFinal; else elseBlock"> de {{banner.dataInicial | date: "dd/MM/yyyy"}} até {{banner.dataFinal | date: "dd/MM/yyyy"}}</div>
-                <ng-template #elseBlock> dia {{banner.dataInicial | date: "dd/MM/yyyy"}}</ng-template>
-            </div>
+                    <div *ngIf="banner.dataFinal; else elseBlock"> de {{banner.dataInicial | date: "dd/MM/yyyy"}} até
+                        {{banner.dataFinal | date: "dd/MM/yyyy"}}</div>
+                    <ng-template #elseBlock> dia {{banner.dataInicial | date: "dd/MM/yyyy"}}</ng-template>
+                </div>
                 <p class="card-text m-font-14 m-card-overflow">{{banner.descricao}}</p>
             </div>
         </div>

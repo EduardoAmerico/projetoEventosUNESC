@@ -3,4 +3,9 @@ export interface Banner{
     titulo: string;
     imagem: string;
     link: string;
+    categId: string[];
+    desscricao:string;
+    dataInicial:string;
+    datafinal:string;
+
 }
