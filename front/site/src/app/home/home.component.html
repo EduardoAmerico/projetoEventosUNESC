@@ -11,14 +11,14 @@
     <div class="col-12">
         <div id="carousel1" class="carousel slide " data-ride="carousel" data-interval="3000">
             <ol class="carousel-indicators">
-                <li *ngFor="let banner of banners; let e = index" data-target="#carousel1" attr.data-slide-to="{{e}}"
+                <li *ngFor="let banner2 of banners2; let e = index" data-target="#carousel1" attr.data-slide-to="{{e}}"
                     class="{{ (e == 0) ? 'active' : ''}}"></li>
 
             </ol>
             <div class="carousel-inner">
-                <div *ngFor="let banner of banners; let i = index" class="carousel-item {{ (i == 0) ? 'active' : ''}}">
-                    <a href="{{banner.link}}">
-                        <img class="d-block img-fluid w-100" [src]="banner.imagem" title="{{banner.titulo}}">
+                <div *ngFor="let banner2 of banners2; let i = index" class="carousel-item {{ (i == 0) ? 'active' : ''}}">
+                    <a href="{{banner2.link}}">
+                        <img class="d-block img-fluid w-100" [src]="banner2.imagem" title="{{banner2.titulo}}">
                     </a>
                 </div>
             </div>
@@ -42,7 +42,7 @@
 
             <option value="1">Técnologia</option>
        
-            <option value="2">Cultura</option>
+            <option value="2">Cultura</option>  
          
             <option value="3">Palestra</option>
        
@@ -52,8 +52,6 @@
     <div class="col-3">
         <button class="btn  btn-success" (click)="onSearch()">Pesquisar</button>
     </div>
-
-
 
 </div>
 
