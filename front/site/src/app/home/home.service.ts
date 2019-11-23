@@ -13,6 +13,7 @@ export class HomeService {
   private readonly API = `${environment.API}banner`;
   private readonly API2 = `${environment.API}categoria`;
   private readonly API3 = `${environment.API}banner?categId=`;
+  private readonly API4 = `${environment.API}banner?titulo_like=`;
   //  private readonly API = "http://localhost:3000/banner";
 
 
@@ -23,10 +24,18 @@ export class HomeService {
     return this.http.get<Banner[]>(this.API);
     
   }
+
+  search(title, index){
+
+    return this.http.get<Banner[]>(this.API4 + title + (index > 0 ? '&categId='+index : ''));
+
+  }
+  
   categ(){
     return this.http.get<Categ[]>(this.API2);
     
   }
+
   categId(index){
     return this.http.get<Banner[]>(this.API3 + index);
     

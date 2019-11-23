@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   banners: Banner[];
   banners2: Banner[];
   idCategoria: any;
+  idInput: any;
 
   constructor(private homeService:HomeService) { }
 
@@ -28,22 +29,19 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     // this.homeService.list().subscribe(dados => this.banners = dados);
     this.idCategoria=0;
+    this.idInput = '';
     this.onSearch();
     this.startBanner();
     
   }
 
   onSearch(){
-    if(this.idCategoria == 0 || this.idCategoria == undefined){
-      this.homeService.list().subscribe(dados => this.banners = dados);
-    }else{
-    this.homeService.categId(this.idCategoria).subscribe(dados => this.banners = dados);
-  }
+    this.homeService.search( this.idInput ,this.idCategoria).subscribe(dados => this.banners = dados);
+    
   }
 
   startBanner(){
-    this.homeService.list().subscribe(dados => this.banners2 = dados);
-   
+    this.homeService.list().subscribe(dados => this.banners2 = dados); 
 
   }
 
