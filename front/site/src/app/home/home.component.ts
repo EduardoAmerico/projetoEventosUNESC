@@ -23,8 +23,7 @@ export class HomeComponent implements OnInit {
       const [day, month, year] = dateStr.split("-")
       return new Date(year, month - 1, day)
     
-  }
-  
+  } 
 
   ngOnInit() {
     // this.homeService.list().subscribe(dados => this.banners = dados);
@@ -43,6 +42,17 @@ export class HomeComponent implements OnInit {
   startBanner(){
     this.homeService.list().subscribe(dados => this.banners2 = dados); 
 
+  }
+
+  onLoadBanner(pbanner){
+    var currentDate = new Date()
+    if (pbanner.dataInicial > currentDate){
+      return 'Em breve'
+    }else if(pbanner.dataFinal < currentDate){
+      return 'Finalizado'
+    }else {
+      return 'Em andamento'
+    }
   }
 
 }

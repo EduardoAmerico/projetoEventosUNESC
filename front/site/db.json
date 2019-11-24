@@ -7,6 +7,7 @@
       "link": "http://unesc.net/portal/",
       "categId": ["3"],
       "descricao": "Os surdos também tem sua importância na sociedade, clique para saber mais.",
+      "acc": "possui",
       "dataInicial": "1574618177000", 
       "dataString": "24 November 2019 17:56:17",
       "dataFinal": "1574945777000"
@@ -18,6 +19,7 @@
       "link": "http://unesc.net/portal/",
       "categId": ["1"],
       "descricao": "Aplicativo de ônibus inovador para a população.",
+      "acc": "",
       "dataInicial": "1572267377000", 
       "dataString": "28 October 2019 12:56:17",
       "dataFinal": "1572440177000"      
@@ -29,6 +31,7 @@
       "link": "http://unesc.net/portal/",
       "categId": ["1"],
       "descricao": "Exposição de tecnologia em Curitiba.",
+      "acc": "possui",
       "dataInicial": "1575982577000", 
       "dataString": "10 December 2019 12:56:17",
       "dataFinal": "1576155377000"
@@ -40,6 +43,7 @@
       "link": "http://unesc.net/portal/",
       "categId": ["1"],
       "descricao": "Tecnologia e informação é o que terá no evento My Inova.",
+      "acc": "",
       "dataInicial": "1576587377000", 
       "dataString": "17 December 2019 12:56:17",
       "dataFinal": "1576616177000"
@@ -51,6 +55,7 @@
       "link": "http://unesc.net/portal/",
       "categId": ["1"],
       "descricao": "Um dos maiores congressos de TI o Rio de Janeiro.",
+      "acc": "possui",
       "dataInicial": "1577278577000", 
       "dataString": "25 December 2019 12:56:17",
       "dataFinal": "1577364977000"
@@ -62,6 +67,7 @@
       "link": "http://unesc.net/portal/",
       "categId": ["2"],
       "descricao": "Evento sobre energia renovável nas cidades inteligentes. Confira!",
+      "acc": "",
       "dataInicial": "1560689777000", 
       "dataString": "16 June 2019 12:56:17",
       "dataFinal": "1560855377000"
@@ -73,6 +79,7 @@
       "link": "http://unesc.net/portal/",
       "categId": ["1"],
       "descricao": "Impactos e novas regras do mercado financeiro é o assunto deste evento, Confira!",
+      "acc": "possui",
       "dataInicial": "1577876177000", 
       "dataString": "1 January 2020 12:56:17",
       "dataFinal": "1577883377000"
@@ -84,6 +91,7 @@
       "link": "http://unesc.net/portal/",
       "categId": ["2"],
       "descricao": "A proteção de dados é essencial para manter a máxima segurança. Confira aqui o que irá ter de interessante neste evento.",
+      "acc": "possui",
       "dataInicial": "1581944177000", 
       "dataString": "17 February 2020 12:56:17",
       "dataFinal": "1581972977000"
@@ -95,6 +103,7 @@
       "link": "http://unesc.net/portal/",
       "categId": ["3"],
       "descricao": "Evento sensacional sobre agricultura ecólogica será realizado em breve.",
+      "acc": "possui",
       "dataInicial": "1569099377000", 
       "dataString": "21 September 2019 20:56:17",
       "dataFinal": "1569106577000"

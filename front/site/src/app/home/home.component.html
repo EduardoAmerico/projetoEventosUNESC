@@ -16,7 +16,8 @@
 
             </ol>
             <div class="carousel-inner">
-                <div *ngFor="let banner2 of banners2; let i = index" class="carousel-item {{ (i == 0) ? 'active' : ''}}">
+                <div *ngFor="let banner2 of banners2; let i = index"
+                    class="carousel-item {{ (i == 0) ? 'active' : ''}}">
                     <a href="{{banner2.link}}">
                         <img class="d-block img-fluid w-100" [src]="banner2.imagem" title="{{banner2.titulo}}">
                     </a>
@@ -37,15 +38,15 @@
         <input type="text" id="myInput" class="form-control" ngModel [(ngModel)]="idInput" placeholder="Pesquisar" />
     </div>
     <div class="col-2">
-        <select class="form-control" ngModel [(ngModel)]="idCategoria" >
+        <select class="form-control" ngModel [(ngModel)]="idCategoria">
             <option value="0">Todos</option>
 
             <option value="1">Técnologia</option>
-       
-            <option value="2">Cultura</option>  
-         
+
+            <option value="2">Cultura</option>
+
             <option value="3">Palestra</option>
-       
+
             <option value="4">Esporte</option>
         </select>
     </div>
@@ -70,6 +71,14 @@
                     <ng-template #elseBlock> dia {{banner.dataInicial | date: "dd/MM/yyyy"}}</ng-template>
                 </div>
                 <p class="card-text m-font-14 m-card-overflow">{{banner.descricao}}</p>
+                <p style="text-align:left;">
+                        <button disabled type="button">{{onLoadBanner(banner)}}</button>
+                    <span *ngIf="banner.acc == 'possui' " style="float:right;">
+                        <input id="clock" margin-top:15px type="image"
+                            src="https://image.flaticon.com/icons/png/512/55/55344.png" alt="Submit" width="28"
+                            height="28">
+                    </span>
+                </p>
             </div>
         </div>
     </div>

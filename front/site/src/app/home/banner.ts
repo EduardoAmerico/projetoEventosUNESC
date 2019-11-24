@@ -5,7 +5,8 @@ export interface Banner{
     link: string;
     categId: string[];
     desscricao:string;
+    acc:string;
     dataInicial:string;
     datafinal:string;
-
+        
 }
