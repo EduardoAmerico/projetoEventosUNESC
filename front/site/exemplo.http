@@ -30,7 +30,7 @@ content-type: application/json
 
 #####
 
-GET http://localhost:3000/banner?titulo_like= HTTP/1.1
+GET http://localhost:3000/banner?_sort=dataInicial&_order=desc&titulo_like= HTTP/1.1
 content-type: application/json
 
 #####
