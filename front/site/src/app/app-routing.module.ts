@@ -16,9 +16,11 @@ const routes: Routes = [
   //   canActivateChild: [AursosGuard]
   // },
 
-  {path: '', component: HomeComponent,
-  // canActivate: [AuthGuard]
-  
+  {
+    path: '', component: HomeComponent,
+  },
+  {
+    path:'eventos', loadChildren: './eventos/eventos.module#EventosModule'
   },
   {path: 'login', component: LoginComponent
   },
