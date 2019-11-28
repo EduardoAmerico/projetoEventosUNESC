@@ -12,13 +12,16 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AgendaComponent } from './agenda/agenda.component';
+import { EventoForm2Component } from './evento-form2/evento-form2.component';
+import { TextMaskModule } from 'angular2-text-mask';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    AgendaComponent
+    AgendaComponent,
+    EventoForm2Component
     
   ],
   imports: [
@@ -27,7 +30,8 @@ import { AgendaComponent } from './agenda/agenda.component';
     HttpClientModule,
     FormsModule,
     ModalModule.forRoot(),
-    SharedModule
+    SharedModule,
+    TextMaskModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AgendaComponent } from './agenda/agenda.component';
+import { EventoForm2Component } from './evento-form2/evento-form2.component';
 
 const routes: Routes = [
   // {path: 'cursos', 
@@ -20,7 +21,7 @@ const routes: Routes = [
     path: '', component: HomeComponent,
   },
   {
-    path:'eventos', loadChildren: './eventos/eventos.module#EventosModule'
+    path:'evento/novo', component: EventoForm2Component
   },
   {path: 'login', component: LoginComponent
   },

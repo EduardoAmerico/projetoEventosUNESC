@@ -1,0 +1,205 @@
+<!-- <div class="col-md-4 ">
+    <div class="row">
+        <div class="col-md-8 box_title">
+            <h1 class="registration_title">
+                Crie seu Evento
+            </h1>
+        </div>
+    </div>
+
+    <form class="simple_form vertical-form" novalidate="novalidate" id="new_user" action="/users" accept-charset="UTF-8"
+        method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token"
+            value="4KhS080YI97XlgEFkl6UZiEVnib4zK3lSKURFYyNPfa3dO6ungN/H9gaf4/JaHb2hVvsw2HIYcooHYjkhtQamg==">
+
+
+        <div class="input hidden user_show_role"><input class="hidden" type="hidden" value="true" name="user[show_role]"
+                id="user_show_role"></div>
+
+        <fieldset>
+
+            <div class="input radio_buttons required user_role"><input type="hidden" name="user[role]" value=""><span
+                    class="radio"><label for="user_role_event_owner"><input class="radio_buttons required" type="radio"
+                            value="event_owner" name="user[role]" id="user_role_event_owner">Sou organizador de
+                        eventos</label></span><span class="radio"><label for="user_role_event_participant"><input
+                            class="radio_buttons required" type="radio" value="event_participant" name="user[role]"
+                            id="user_role_event_participant">Sou participante</label></span></div>
+        </fieldset>
+
+        <div class="box_form_user" id="form_user" style="display: block;">
+            <legend></legend>
+            <div class="form-group">
+                <div class="input string required user_name"><label class="string required control-label"
+                        for="user_name"><abbr title="obrigatório">*</abbr> Nome completo</label><input
+                        class="string required form-control" placeholder="Ex: João da Silva" type="text"
+                        name="user[name]" id="user_name"></div>
+            </div>
+
+            <div class="box_form_document" id="form_document" style="overflow: hidden;">
+                <fieldset>
+                    <div class="document-container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="input select optional user_document_type"><label
+                                            class="select optional control-label" for="document-type">Tipo do
+                                            documento</label><select id="document-type"
+                                            class="select optional form-control" name="user[document_type]">
+                                            <option value="">Selecione uma opção</option>
+                                            <option value="cpf">CPF</option>
+                                            <option value="cnpj">CNPJ</option>
+                                            <option value="rg">RG</option>
+                                            <option value="cnh">CNH</option>
+                                            <option value="passport">Passaporte</option>
+                                            <option value="birth_certificate">Certidão de nascimento</option>
+                                        </select></div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="input string optional user_document_value"><label
+                                            class="string optional control-label" for="user_document_value">Número do
+                                            documento</label><input class="string optional form-control" type="text"
+                                            name="user[document_value]" id="user_document_value"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+            </div>
+
+            <div class="form-group">
+                <div class="input email required user_email"><label class="email required control-label"
+                        for="user_email"><abbr title="obrigatório">*</abbr> Email</label><input
+                        class="string email required form-control" placeholder="Ex: joaodasilva@email.com" type="email"
+                        name="user[email]" id="user_email"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <div class="input password required user_password"><label
+                                class="password required control-label" for="user_password"><abbr
+                                    title="obrigatório">*</abbr> Senha</label><input
+                                class="password required form-control" required="required" aria-required="true"
+                                placeholder="Sua senha" type="password" name="user[password]" id="user_password"></div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <div class="input password required user_password_confirmation"><label
+                                class="password required control-label" for="user_password_confirmation"><abbr
+                                    title="obrigatório">*</abbr> Repita a Senha</label><input
+                                class="password required form-control" required="required" aria-required="true"
+                                placeholder="Repita a senha" type="password" name="user[password_confirmation]"
+                                id="user_password_confirmation"></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="center">
+                <input type="submit" name="commit" value="Criar Nova Conta" data-disable-with="Aguarde…">
+            </div>
+            <div class="center sign_in">
+                <a href="/users/sign_in">Entrar numa conta existente</a><br>
+
+            </div>
+
+        </div>
+    </form>
+</div> -->
+
+<div class="col-md-6 margin">
+        
+            <div id="tab-card " class="jumbotron col-md-6 offset-md-9 p-4 jumbotron-pb-0 ">
+                    <div class=" text-center margin2" >
+                            <h2 class="d-inline-block ">Cadastro de Eventos</h2>
+                        </div>
+        
+    <div class="row">
+        <div class="col-12">
+            <label id="titulo" class="texto">Nome do Evento:</label>
+
+            <input type="text" class="form-control" id="titulo" placeholder="Titulo do Evento" ngModel
+                [(ngModel)]="evento.titulo" />
+        </div>
+    </div>
+
+
+    <div class="row">
+
+        <div class="col-12">
+
+            <label id="imagem">Banner do Evento: </label>
+            <input type="text" class="form-control" id="imagem" placeholder="Banner do Evento" ngModel
+                [(ngModel)]="evento.imagem" />
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+
+            <label id="link">Link do Evento: </label>
+            <input type="text" class="form-control" id="link" placeholder="Link do Evento" ngModel
+                [(ngModel)]="evento.link" />
+
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-12">
+
+            <label id="categId">Categoria do Evento: </label>
+            <input type="text" class="form-control" id="categId" placeholder="Categoria do Evento" ngModel
+                [(ngModel)]="evento.categId" />
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+
+            <label id="descricao">Descrição do Evento: </label>
+            <input type="text" class="form-control" id="descricao" placeholder="Descrição do Evento" ngModel
+                [(ngModel)]="evento.descricao" />
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+
+            <label id="acc">Possui horas ACC: </label>
+            <select class="form-control" name="month" ngModel [(ngModel)]="evento.acc">
+
+                <option value=false>Não</option>
+                <option value=true>Sim</option>
+            </select>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+
+            <label id="titulo">Data inicial do Evento: </label>
+            <input type="text" class="form-control" id="dataInicial" ngModel
+                [(ngModel)]="evento.dataInicial" [textMask]="{mask: mask}"/>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+
+            <label id="titulo">Data final do Evento: </label>
+            <input type="text" class="form-control" id="dataFinal" ngModel
+                [(ngModel)]="evento.dataFinal" [textMask]="{mask: mask}"/>
+
+        </div>
+    </div>
+    <div style="margin-top: 10px">
+        <button type="sumit" class="btn btn-primary" (click)="validateDataEvento()">Salvar</button>
+        <button type="button" class="btn btn-default" (click)="onCancel()">Cancelar</button>
+    </div>
+</div>
+</div>
