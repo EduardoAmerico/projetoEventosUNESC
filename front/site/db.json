@@ -125,28 +125,6 @@
       "dataInicial": "1569099377000",
       "dataString": "21 September 2019 20:56:17",
       "dataFinal": "1569106577000"
-    },
-    {
-      "titulo": "11111111111",
-      "imagem": "1111111111111",
-      "link": "11111111111111",
-      "categId": "111111111111111111111",
-      "descricao": "1111111111111",
-      "acc": false,
-      "dataInicial": "1605063600000",
-      "dataFinal": "",
-      "id": 10
-    },
-    {
-      "titulo": "11111111111",
-      "imagem": "1111111111111",
-      "link": "11111111111111",
-      "categId": "111111111111111111111",
-      "descricao": "1111111111111",
-      "acc": false,
-      "dataInicial": "1605063600000",
-      "dataFinal": "",
-      "id": 11
     }
   ],
   "categoria": [
