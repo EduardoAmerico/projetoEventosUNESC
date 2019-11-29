@@ -8,80 +8,91 @@
 </div> -->
 
 <div class="container">
-<div class="row m-padding-tb-45">
-    <div class="col-12">
-        <div id="carousel1" class="carousel slide " data-ride="carousel" data-interval="3000">
-            <ol class="carousel-indicators">
-                <li *ngFor="let banner2 of banners2; let e = index" data-target="#carousel1" attr.data-slide-to="{{e}}"
-                    class="{{ (e == 0) ? 'active' : ''}}"></li>
+    <div class="row m-padding-tb-45">
+        <div class="col-12">
+            <div id="carousel1" class="carousel slide " data-ride="carousel" data-interval="3000">
+                <ol class="carousel-indicators">
+                    <li *ngFor="let banner2 of banners2; let e = index" data-target="#carousel1"
+                        attr.data-slide-to="{{e}}" class="{{ (e == 0) ? 'active' : ''}}"></li>
 
-            </ol>
-            <div class="carousel-inner">
-                <div *ngFor="let banner2 of banners2; let i = index"
-                    class="carousel-item {{ (i == 0) ? 'active' : ''}}">
-                    <a href="{{banner2.link}}">
-                        <img class="d-block img-fluid w-100" [src]="banner2.imagem" title="{{banner2.titulo}}">
+                </ol>
+                <div class="carousel-inner">
+                    <div *ngFor="let banner2 of banners2; let i = index"
+                        class="carousel-item {{ (i == 0) ? 'active' : ''}}">
+                        <a href="{{banner2.link}}">
+                            <img class="d-block img-fluid w-100" [src]="banner2.imagem" title="{{banner2.titulo}}">
+                        </a>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span
+                        class="sr-only">Previous</span> </a>
+                <a class="carousel-control-next" href="#carousel1" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span> <span
+                        class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="
+padding-bottom: 45px;">
+        <div class="col-7">
+            <input type="text" id="myInput" class="form-control" ngModel [(ngModel)]="idInput"
+                placeholder="Pesquisar" />
+        </div>
+        <div class="col-2">
+            <select class="form-control" ngModel [(ngModel)]="idCategoria">
+                <option value="0">Todos</option>
+
+                <option value="1">Tecnologia</option>
+
+                <option value="2">Cultura</option>
+
+                <option value="3">Palestra</option>
+
+                <option value="4">Esporte</option>
+            </select>
+        </div>
+        <div class="col-3">
+            <button class="btn  btn-success" (click)="onSearch()">Pesquisar</button>
+        </div>
+
+    </div>
+
+
+    <div class="row card-group">
+        <div *ngFor="let banner of banners" class="col-lg-4 col-12 m-p-5">
+           
+                <div class="card">
+                        <div class="close" (click)= "onClose(banner.id)">X</div>
+                       
+                    <a href="{{banner.link}}">
+                            
+                        <img class="card-img-top" src="{{banner.imagem}}" alt="{{banner.titulo}}">
+                        
                     </a>
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span
-                    class="sr-only">Previous</span> </a>
-            <a class="carousel-control-next" href="#carousel1" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </div>
-</div>
-
-<div class="row ">
-    <div class="col-7">
-        <input type="text" id="myInput" class="form-control" ngModel [(ngModel)]="idInput" placeholder="Pesquisar" />
-    </div>
-    <div class="col-2">
-        <select class="form-control" ngModel [(ngModel)]="idCategoria">
-            <option value="0">Todos</option>
-
-            <option value="1">Tecnologia</option>
-
-            <option value="2">Cultura</option>
-
-            <option value="3">Palestra</option>
-
-            <option value="4">Esporte</option>
-        </select>
-    </div>
-    <div class="col-3">
-        <button class="btn  btn-success" (click)="onSearch()">Pesquisar</button>
-    </div>
-
-</div>
-
-
-<div class="row card-group">
-    <div *ngFor="let banner of banners" class="col-lg-4 col-12 m-p-5">
-        <div class="card">
-            <a href="{{banner.link}}">
-                <img class="card-img-top" src="{{banner.imagem}}" alt="{{banner.titulo}}">
-            </a>
-            <div class="card-body">
-                <h4 class="card-title m-font-18">{{banner.titulo}}</h4>
-                <div class="card-subtitle mb-2 text-muted m-font-14">
-                    <div *ngIf="banner.dataFinal; else elseBlock"> de {{banner.dataInicial | date: "dd/MM/yyyy"}} até
-                        {{banner.dataFinal | date: "dd/MM/yyyy"}}</div>
-                    <ng-template #elseBlock> dia {{banner.dataInicial | date: "dd/MM/yyyy"}}</ng-template>
-                </div>
-                <p class="card-text m-font-14 m-card-overflow">{{banner.descricao}}</p>
-                <p style="text-align:left;">
-                        <button disabled type="button">{{onLoadBanner(banner)}}</button>
-                    <span *ngIf="banner.acc == 'possui' " style="float:right;">
-                        <input id="clock" margin-top:15px type="image"
-                            src="https://image.flaticon.com/icons/png/512/55/55344.png" alt="Submit" width="28"
-                            height="28">
-                    </span>
-                </p>
+                    <div class="card-body">
+                        <h4 class="card-title m-font-18">{{banner.titulo}}</h4>
+                        <div class="card-subtitle mb-2 text-muted m-font-14">
+                            <div *ngIf="banner.dataFinal; else elseBlock"> de
+                                {{banner.dataInicial | date: "dd/MM/yyyy"}} até
+                                {{banner.dataFinal | date: "dd/MM/yyyy"}}</div>
+                            <ng-template #elseBlock> dia {{banner.dataInicial | date: "dd/MM/yyyy"}}</ng-template>
+                        </div>
+                        <p class="card-text m-font-14 m-card-overflow">{{banner.descricao}}</p>
+                        <p style="text-align:left;">
+                            <button disabled type="button">{{onLoadBanner(banner)}}</button>
+                            <span *ngIf="banner.acc == 'possui' " style="float:right;">
+                                <input id="clock" margin-top:15px type="image"
+                                    src="https://image.flaticon.com/icons/png/512/55/55344.png" alt="Submit" width="28"
+                                    height="28">
+                            </span>
+                        </p>
+                    </div>
+                    
+                
             </div>
         </div>
     </div>
-</div>
 </div>

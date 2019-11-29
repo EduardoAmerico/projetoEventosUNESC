@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Banner } from './banner';
 import { Observable, empty } from 'rxjs';
 import { Categ } from './categ';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,7 @@ export class HomeComponent implements OnInit {
   idCategoria: any;
   idInput: any;
 
-  constructor(private homeService:HomeService) { }
+  constructor(private homeService:HomeService, private router:Router) { }
 
   formatDate(dateStr){
       const [day, month, year] = dateStr.split("-")
@@ -39,9 +40,20 @@ export class HomeComponent implements OnInit {
     
   }
 
+  onClose(id){
+    console.log(id)
+    this.homeService.delete(id).subscribe();
+    this.onRefresh();
+    console.log("a")
+
+  }
+
   startBanner(){
     this.homeService.list().subscribe(dados => this.banners2 = dados); 
 
+  }
+  onRefresh() {
+    window.location.reload();
   }
 
   onLoadBanner(pbanner){

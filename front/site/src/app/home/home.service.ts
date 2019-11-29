@@ -14,6 +14,7 @@ export class HomeService {
   private readonly API2 = `${environment.API}categoria`;
   private readonly API3 = `${environment.API}banner?_sort=dataInicial&_order=desc&categId=`;
   private readonly API4 = `${environment.API}banner?_sort=dataInicial&_order=desc&titulo_like=`;
+  private readonly API5 = `${environment.API}banner/`;
   //  private readonly API = "http://localhost:3000/banner";
 
 
@@ -39,5 +40,10 @@ export class HomeService {
   categId(index){
     return this.http.get<Banner[]>(this.API3 + index);
     
+  }
+  delete(id){
+    return this.http.delete<Banner[]>(this.API5 + id);
+    
+
   }
 }
